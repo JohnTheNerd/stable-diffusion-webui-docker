@@ -75,7 +75,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   cd stable-diffusion-webui && \
   git fetch && \
   git reset --hard ${SHA} && \
-  pip install -r requirements_versions.txt
+  pip install -r requirements_versions.txt && \
+  pip install sqlalchemy scikit-image imageio_ffmpeg av moviepy numexpr mutagen
 
 COPY . /docker
 
